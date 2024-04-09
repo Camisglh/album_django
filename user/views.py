@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.core.cache import cache
 from django.shortcuts import redirect, render
 
 from card.models import Photo
@@ -16,7 +17,13 @@ def register(request):
             return redirect("card:home")
     else:
         form = UserCreationForm()
-    return render(request, "auth/register.html", {"form": form})
+
+    register_form = cache.get("register_form")
+    if register_form is None:
+        register_form = form
+        cache.set("register_form", register_form, 60)
+
+    return render(request, "auth/register.html", {"form": register_form})
 
 
 def login_view(request):
@@ -31,7 +38,15 @@ def login_view(request):
             error_message = "Неверный логин или пароль"
     else:
         error_message = None
-    return render(request, "auth/login.html", {"error_message": error_message})
+
+    login_template = cache.get("login_template")
+    if login_template is None:
+        login_template = render(
+            request, "auth/login.html", {"error_message": error_message}
+        )
+        cache.set("login_template", login_template, 60)
+
+    return login_template
 
 
 def logout_view(request):
@@ -41,5 +56,9 @@ def logout_view(request):
 
 @login_required
 def profile(request):
-    user_photos = Photo.objects.filter(user=request.user)
+    user_photos = cache.get("user_photos_%s" % request.user.id)
+    if user_photos is None:
+        user_photos = Photo.objects.filter(user=request.user)
+        cache.set("user_photos_%s" % request.user.id, user_photos, 60)
+
     return render(request, "auth/profile.html", {"user_photos": user_photos})
