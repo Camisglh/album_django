@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'css/edit_photo.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="edit-photo-wrapper">
+    <div class="edit-photo-form">
+      <h2>Редактировать фотографию</h2>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

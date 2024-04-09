@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="profile-wrapper">
+    <h2>Мой профиль</h2>
+    <div class="profile-items">
+      {% for photo in user_photos %}
+        <div class="profile-item">
+          <img src="{{ photo.image.url }}" alt="{{ photo.name }}">
+          <h2>{{ photo.name }}</h2>
+          <div class="actions">
+            <a href="{% url 'card:edit_photo' photo.id %}" class="icon solid fa-edit"></a>
+            <a href="{% url 'card:delete_photo' photo.id %}" class="icon solid fa-trash"></a>
+          </div>
+        </div>
+      {% empty %}
+        <p>У вас еще нет фотографий.</p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

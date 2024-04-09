@@ -4,14 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92cc695e-489a-47f3-b1ff-1d07519a912c" name="Changes" comment="add function add_photo">
-      <change afterPath="$PROJECT_DIR$/static/css/category.css" afterDir="false" />
+    <list default="true" id="92cc695e-489a-47f3-b1ff-1d07519a912c" name="Changes" comment="add category">
+      <change afterPath="$PROJECT_DIR$/static/css/delete_photo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/edit_photo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/profile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/auth/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/delete_photo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/edit_photo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/card/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/card/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/card/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/card/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/registration.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/registration.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +94,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1712649219581</updated>
-      <workItem from="1712649220932" duration="18812000" />
+      <workItem from="1712649220932" duration="20823000" />
+      <workItem from="1712677472076" duration="3381000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -128,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712667905069</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add category">
+      <option name="closed" value="true" />
+      <created>1712669313407</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712669313407</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +155,7 @@
     <MESSAGE value="start" />
     <MESSAGE value="update user" />
     <MESSAGE value="add function add_photo" />
-    <option name="LAST_COMMIT_MESSAGE" value="add function add_photo" />
+    <MESSAGE value="add category" />
+    <option name="LAST_COMMIT_MESSAGE" value="add category" />
   </component>
 </project>

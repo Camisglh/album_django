@@ -1,0 +1,60 @@
+/* Edit Photo Styles */
+
+.edit-photo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.edit-photo-form {
+  background-color: rgba(18, 21, 29, 0.85);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 0.5rem #ffffff;
+  width: 100%;
+  max-width: 30rem;
+}
+
+.edit-photo-form h2 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.edit-photo-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.edit-photo-form label {
+  display: block;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.edit-photo-form input,
+.edit-photo-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  color: #150C07;
+}
+
+.edit-photo-form button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #d64760;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.edit-photo-form button:hover {
+  background-color: #c23549;
+}

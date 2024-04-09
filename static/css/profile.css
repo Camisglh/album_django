@@ -1,0 +1,76 @@
+/* Profile Styles */
+
+.profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.profile-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -1rem;
+}
+
+.profile-item {
+  position: relative;
+  width: 20rem;
+  height: 16rem;
+  margin: 1rem;
+  box-shadow: 0 0 0 0.5rem #ffffff;
+  overflow: hidden;
+}
+
+.profile-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-item:hover img {
+  transform: scale(1.1);
+}
+
+.profile-item h2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+  background-color: rgba(18, 21, 29, 0.85);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+  z-index: 1;
+}
+
+.profile-item .actions {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.profile-item .actions a {
+  background-color: rgba(18, 21, 29, 0.85);
+  color: #fff;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.35;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.profile-item .actions a:hover {
+  opacity: 1;
+}

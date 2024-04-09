@@ -29,7 +29,21 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+.photo-gallery {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
 
+.category-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.category-list a {
+  margin-bottom: 0.5rem;
+}
 body {
 	line-height: 1;
 }

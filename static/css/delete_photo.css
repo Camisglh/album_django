@@ -1,0 +1,46 @@
+/* Delete Photo Styles */
+
+.delete-photo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.delete-photo-content {
+  background-color: rgba(18, 21, 29, 0.85);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 0.5rem #ffffff;
+  width: 100%;
+  max-width: 30rem;
+  text-align: center;
+}
+
+.delete-photo-content h2 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.delete-photo-content p {
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.delete-photo-content form button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #d64760;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.delete-photo-content form button:hover {
+  background-color: #c23549;
+}

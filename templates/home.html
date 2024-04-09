@@ -18,15 +18,22 @@
         <div class="items">
             <div class="item intro span-2">
                 <h1>Альбом</h1>
-                <p>A responsive portfolio site<br />
-                template by HTML5 UP</p>
+                <p>Это сайт портфолио на Django<br />
+                для открытой демонстрации своих проектов</p>
             </div>
 
             {% for photo in photos %}
-            <article class="item thumb span-1">
-                <h2>{{ photo.name }} ({{ photo.category.name }})</h2>
-                <a href="{{ photo.image.url }}" target="_blank" class="image"><img src="{{ photo.image.url }}" alt="{{ photo.name }}"></a>
-            </article>
+                {% if forloop.counter|divisibleby:3 %}
+                    <article class="item thumb span-2">
+                        <h2>{{ photo.name }} ({{ photo.user }})</h2>
+                        <a href="{{ photo.image.url }}" target="_blank" class="image"><img src="{{ photo.image.url }}" alt="{{ photo.name }}"></a>
+                    </article>
+                {% else %}
+                    <article class="item thumb span-1">
+                        <h2>{{ photo.name }} ({{ photo.user }})</h2>
+                        <a href="{{ photo.image.url }}" target="_blank" class="image"><img src="{{ photo.image.url }}" alt="{{ photo.name }}"></a>
+                    </article>
+                {% endif %}
             {% endfor %}
 
         </div>
@@ -36,18 +43,7 @@
     <section id="footer">
         <!-- Footer -->
         <section id="footer">
-            <section>
-                <p>This is <strong>Parallelism</strong>, a responsive portfolio site template by <a href="http://html5up.net">HTML5 UP</a>. Free for personal
-                and commercial use under the <a href="http://html5up.net/license">Creative Commons Attribution</a> license.</p>
+
             </section>
-            <section>
-                <ul class="icons">
-                    <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-                </ul>
-                <ul class="copyright">
-                    <li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                </ul>
-            </section>
-        </section>
     </section>
 {% endblock %}
