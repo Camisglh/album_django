@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="{% static 'css/main.css' %}" />
         <link rel="stylesheet" href="{% static 'css/header.css' %}" />
         <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+        <link rel="stylesheet" href="{% static 'css/add_photo.css' %}">
         <noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
     </head>
     <body class="is-preload">
@@ -17,6 +18,7 @@
         <a href="{% url 'card:home' %}" class="logo">Главная</a>
         <nav id="nav">
             {% if user.is_authenticated %}
+                <a href="{% url 'card:add-photo' %}">Добавить фото</a>
                 <a href="{% url 'user:logout' %}">Выход</a>
             {% else %}
                 <a href="{% url 'user:register' %}">Регистрация</a>
