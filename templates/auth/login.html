@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+  <div class="registration-form">
   <h2>Вход</h2>
   {% if error_message %}
     <p style="color: red;">{{ error_message }}</p>
@@ -13,4 +14,5 @@
     <input type="password" id="password" name="password" required>
     <button type="submit">Войти</button>
   </form>
+  </div>
 {% endblock %}

@@ -8,19 +8,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="{% static 'css/main.css' %}" />
         <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/registration.css' %}">
         <noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
     </head>
     <body class="is-preload">
     <header id="header">
     <div class="inner">
-        <a href="" class="logo">Главная</a>
+        <a href="{% url 'card:home' %}" class="logo">Главная</a>
         <nav id="nav">
-            <a href="#" class="icon fa-angle-down">Аккаунт</a>
-            <ul>
-                <li><a href="#">Регистрация</a></li>
-                <li><a href="#">Вход</a></li>
-                <li><a href="#">Выход</a></li>
-            </ul>
+            {% if user.is_authenticated %}
+                <a href="{% url 'user:logout' %}">Выход</a>
+            {% else %}
+                <a href="{% url 'user:register' %}">Регистрация</a>
+                <a href="{% url 'user:login' %}">Вход</a>
+            {% endif %}
         </nav>
     </div>
     </header>

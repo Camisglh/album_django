@@ -4,6 +4,7 @@ from django.urls import path
 
 from . import views
 
+app_name = "card"
 urlpatterns = [
-    path("", views.home, name="index"),
+    path("", views.home, name="home"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

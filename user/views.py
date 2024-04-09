@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
 
 from .forms import UserCreationForm
@@ -10,7 +10,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect("")
+            return redirect("card:home")
     else:
         form = UserCreationForm()
     return render(request, "auth/register.html", {"form": form})
@@ -23,9 +23,14 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect("")
+            return redirect("card:home")
         else:
             error_message = "Неверный логин или пароль"
     else:
         error_message = None
     return render(request, "auth/login.html", {"error_message": error_message})
+
+
+def logout_view(request):
+    logout(request)
+    return redirect("/")
