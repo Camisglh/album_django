@@ -2,12 +2,27 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 
 from .forms import PhotoForm
-from .models import Photo
+from .models import Category, Photo
 
 
-def home(request):
-    photos = Photo.objects.all()
-    return render(request, "home.html", {"photos": photos})
+def home(request, category_slug=None):
+    if category_slug:
+        current_category = Category.objects.get(slug=category_slug)
+        photos = Photo.objects.filter(category=current_category)
+    else:
+        current_category = None
+        photos = Photo.objects.all()
+    categories = Category.objects.all()
+    return render(
+        request,
+        "home.html",
+        {
+            "photos": photos,
+            "categories": categories,
+            "current_category": current_category,
+            "category_slug": category_slug,
+        },
+    )
 
 
 @login_required

@@ -6,6 +6,14 @@
 {% block content %}
     <!-- Main -->
     <section id="main">
+        <div class="photo-gallery">
+        <div class="category-list">
+            <a href="{% url 'card:home' %}">Все</a>
+            {% for category in categories %}
+                <a href="{% url 'card:home_category' category.slug %}">{{ category.name }}</a>
+            {% endfor %}
+        </div>
+            </div>
         <!-- Items -->
         <div class="items">
             <div class="item intro span-2">
@@ -16,7 +24,7 @@
 
             {% for photo in photos %}
             <article class="item thumb span-1">
-                <h2>{{ photo.name }} {{ photo.user }}</h2>
+                <h2>{{ photo.name }} ({{ photo.category.name }})</h2>
                 <a href="{{ photo.image.url }}" target="_blank" class="image"><img src="{{ photo.image.url }}" alt="{{ photo.name }}"></a>
             </article>
             {% endfor %}
