@@ -110,32 +110,6 @@
 
 				});
 
-	// Poptrox.
-		$main.poptrox({
-			onPopupOpen: function() { $body.addClass('is-poptrox-visible'); },
-			onPopupClose: function() { $body.removeClass('is-poptrox-visible'); },
-			overlayColor: '#1a1f2c',
-			overlayOpacity: 0.75,
-			popupCloserText: '',
-			popupLoaderText: '',
-			selector: '.item.thumb a.image',
-			caption: function($a) {
-				return $a.prev('h2').html();
-			},
-			usePopupDefaultStyling: false,
-			usePopupCloser: false,
-			usePopupCaption: true,
-			usePopupNav: true,
-			windowMargin: 50
-		});
-
-		breakpoints.on('>small', function() {
-			$main[0]._poptrox.windowMargin = 50;
-		});
-
-		breakpoints.on('<=small', function() {
-			$main[0]._poptrox.windowMargin = 0;
-		});
 
 	// Keyboard shortcuts.
 		if (settings.keyboardShortcuts.enabled)

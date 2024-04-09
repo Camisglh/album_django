@@ -1,0 +1,83 @@
+#header {
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: rgba(18, 21, 29, 0.85);
+    height: 3em;
+    line-height: 3em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#header .inner {
+    max-width: 65em;
+    width: calc(100% - 6em);
+    margin: 0 auto;
+    position: relative;
+}
+
+#header .logo {
+    display: inline-block;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#header nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 0.8em;
+}
+
+#header nav > a {
+    display: inline-block;
+    padding: 0 1.5em;
+    height: inherit;
+    line-height: inherit;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#header nav > a:hover {
+    color: #fff;
+}
+
+#header nav > a.icon {
+    padding-right: 1.5em !important;
+}
+
+#header nav > a.icon:before {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f107';
+    margin-right: 0.5em;
+}
+
+#header nav > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 3em;
+    background: #1a1f2c;
+    width: 14em;
+    box-shadow: 0 0.15em 0.25em 0 rgba(0, 0, 0, 0.25);
+    display: none;
+}
+
+#header nav > ul > li {
+    display: block;
+    padding: 0.5em 1em 0.5em 1em;
+}
+
+#header nav > ul > li a {
+    display: block;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#header nav > ul > li a:hover {
+    color: #fff;
+}

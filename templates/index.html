@@ -9,15 +9,15 @@
         <!-- Items -->
         <div class="items">
             <div class="item intro span-2">
-                <h1>Parallelism</h1>
+                <h1>Альбом</h1>
                 <p>A responsive portfolio site<br />
                 template by HTML5 UP</p>
             </div>
 
             {% for photo in photos %}
             <article class="item thumb span-1">
-                <h2>{{ photo.name }}</h2>
-                <a href="{{ photo.image.url }}" class="image"><img src="{{ photo.image.url }}" alt="{{ photo.name }}"></a>
+                <h2>{{ photo.name }} {{ photo.user }}</h2>
+                <a href="{{ photo.image.url }}" target="_blank" class="image"><img src="{{ photo.image.url }}" alt="{{ photo.name }}"></a>
             </article>
             {% endfor %}
 
@@ -34,10 +34,6 @@
             </section>
             <section>
                 <ul class="icons">
-                    <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                    <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
                     <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
                 </ul>
                 <ul class="copyright">
