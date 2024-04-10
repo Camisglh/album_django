@@ -18,26 +18,35 @@ Clone repository
 Create file .env
 ```env
 # DJANGO
-SECRET_KEY = '' #'django-insecure-vrry$7m4@=&*rp^ro1i6i_2)afr!8t!8c29vnx-5#7bhws-yen'
-NAME = '' #'album'
-USER = '' #'cami'
-PASSWORD = '' #'cami'
-HOST = '' #'localhost'
-PORT = '' #'5432'
+SECRET_KEY = ''
+#'django-insecure-vrry$7m4@=&*rp^ro1i6i_2)afr!8t!8c29vnx-5#7bhws-yen'
+NAME = ''
+ #'album'
+USER = ''
+PASSWORD = ''
+HOST = ''
+PORT = ''
 
 # REDIS
-REDIS_HOST= #127.0.0.1
-REDIS_PORT= #6379
-REDIS_DB= #0
+REDIS_HOST=
+ #127.0.0.1
+REDIS_PORT=
+#6379
+REDIS_DB=
+#0
 
 # CELERY
-CELERY_BROKER_URL= #amqp://guest:guest@localhost:5672/
-CELERY_RESULT_BACKEND= #django-db
-CELERY_ACCEPT_CONTENT= #application/json
-CELERY_TASK_SERIALIZER= #json
-CELERY_RESULT_SERIALIZER= #json
-CELERY_TIMEZONE= #UTC
-CELERY_BEAT_SCHEDULER= #django_celery_beat.schedulers:DatabaseScheduler
+CELERY_BROKER_URL=
+ #amqp://guest:guest@localhost:5672/
+CELERY_RESULT_BACKEND=
+#django-db
+CELERY_ACCEPT_CONTENT=
+ #application/json
+CELERY_TASK_SERIALIZER=
+CELERY_RESULT_SERIALIZER= 
+CELERY_TIMEZONE= 
+CELERY_BEAT_SCHEDULER=
+ #django_celery_beat.schedulers:DatabaseScheduler
 
 ```
 #### Home
