@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 from .forms import PhotoForm
 from .models import Category, Photo
+from .tasks import process_photo
 
 
 def cached_query(query, key, timeout=None):
@@ -51,21 +52,18 @@ def home(request, category_slug=None):
 
 @login_required
 def add_photo(request):
-    def get_form():
-        if request.method == "POST":
-            form = PhotoForm(request.POST, request.FILES)
-            if form.is_valid():
-                photo = form.save(commit=False)
-                photo.user = request.user
-                photo.save()
-                return redirect("card:home")
-        else:
-            form = PhotoForm()
-        return form
+    if request.method == "POST":
+        form = PhotoForm(request.POST, request.FILES)
+        if form.is_valid():
+            photo = form.save(commit=False)
+            photo.user = request.user
+            photo.save()
+            process_photo.delay(photo.id)
+            return redirect("card:home")
+    else:
+        form = PhotoForm()
 
-    cached_form = cached_query(get_form, "add_photo_form", timeout=300)
-
-    return render(request, "add_photo.html", {"form": cached_form})
+    return render(request, "add_photo.html", {"form": form})
 
 
 @login_required

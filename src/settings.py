@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     "debug_toolbar",
     "card",
     "user",
+    "django_celery_results",
 ]
 
 MIDDLEWARE = [
@@ -129,6 +130,13 @@ CACHES = {
     }
 }
 
+CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL")
+CELERY_RESULT_BACKEND = os.getenv("CELERY_RESULT_BACKEND")
+CELERY_ACCEPT_CONTENT = [os.getenv("CELERY_ACCEPT_CONTENT")]
+CELERY_TASK_SERIALIZER = os.getenv("CELERY_TASK_SERIALIZER")
+CELERY_RESULT_SERIALIZER = os.getenv("CELERY_RESULT_SERIALIZER")
+CELERY_TIMEZONE = os.getenv("CELERY_TIMEZONE")
+CELERY_BEAT_SCHEDULER = os.getenv("CELERY_BEAT_SCHEDULER")
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
