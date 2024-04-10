@@ -59,3 +59,16 @@ CELERY_BEAT_SCHEDULER=django_celery_beat.schedulers:DatabaseScheduler
 Screenshots
 
 Main page
+![img.png](media_readme%2Fimg.png)
+
+Profile
+![profle.png](media_readme%2Fprofle.png)
+
+Add photo
+![add_photo.png](media_readme%2Fadd_photo.png)
+
+Register
+![register.png](media_readme%2Fregister.png)
+
+Login
+![login.png](media_readme%2Flogin.png)

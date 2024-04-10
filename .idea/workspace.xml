@@ -4,16 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92cc695e-489a-47f3-b1ff-1d07519a912c" name="Changes" comment="add celery">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+    <list default="true" id="92cc695e-489a-47f3-b1ff-1d07519a912c" name="Changes" comment="add docker and docs">
+      <change afterPath="$PROJECT_DIR$/card/cache_utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media_readme/add_photo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media_readme/login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media_readme/profle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media_readme/register.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/card/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/card/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/card/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/add_photo.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_photo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/auth/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auth/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/auth/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auth/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/auth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auth/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,11 +70,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/media_readme" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/static/css" />
       <recent name="$PROJECT_DIR$/media" />
       <recent name="$PROJECT_DIR$/static" />
-      <recent name="$PROJECT_DIR$/templates/assets" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -92,7 +97,8 @@
       <workItem from="1712677472076" duration="5069000" />
       <workItem from="1712686431006" duration="2855000" />
       <workItem from="1712730439832" duration="6735000" />
-      <workItem from="1712742734459" duration="6664000" />
+      <workItem from="1712742734459" duration="7110000" />
+      <workItem from="1712754395423" duration="1888000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -166,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712734880171</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add docker and docs">
+      <option name="closed" value="true" />
+      <created>1712749438729</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1712749438729</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +197,7 @@
     <MESSAGE value="add profile" />
     <MESSAGE value="add redis" />
     <MESSAGE value="add celery" />
-    <option name="LAST_COMMIT_MESSAGE" value="add celery" />
+    <MESSAGE value="add docker and docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="add docker and docs" />
   </component>
 </project>

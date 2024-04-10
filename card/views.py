@@ -1,25 +1,10 @@
 from django.contrib.auth.decorators import login_required
-from django.core.cache import cache
 from django.shortcuts import get_object_or_404, redirect, render
 
+from .cache_utils import cached_query
 from .forms import PhotoForm
 from .models import Category, Photo
 from .tasks import process_photo
-
-
-def cached_query(query, key, timeout=None):
-    """
-    Cache the results of a query to improve performance.
-    """
-    cached_results = cache.get(key)
-
-    if cached_results is not None:
-        return cached_results
-
-    results = query()
-    cache.set(key, results, timeout=timeout)
-
-    return results
 
 
 def home(request, category_slug=None):

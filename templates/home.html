@@ -8,7 +8,7 @@
     <section id="main">
         <div class="photo-gallery">
         <div class="category-list">
-            <a href="{% url 'card:home' %}">Все</a>
+            <a href="{% url 'card:home' %}">All</a>
             {% for category in categories %}
                 <a href="{% url 'card:home_category' category.slug %}">{{ category.name }}</a>
             {% endfor %}
@@ -17,9 +17,9 @@
         <!-- Items -->
         <div class="items">
             <div class="item intro span-2">
-                <h1>Альбом</h1>
-                <p>Это сайт портфолио на Django<br />
-                для открытой демонстрации своих проектов</p>
+                <h1>Album</h1>
+                <p>This is a Django-based portfolio site<br />
+                to publicly showcase their projects</p>
             </div>
 
             {% for photo in photos %}

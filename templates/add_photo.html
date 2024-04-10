@@ -4,11 +4,11 @@
 {% block content %}
 <div class="add-photo-container">
     <div class="add-photo-form">
-        <h2>Добавить фотографию</h2>
+        <h2>Add photo</h2>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Сохранить</button>
+            <button type="submit">Save</button>
         </form>
     </div>
 </div>
