@@ -4,9 +4,13 @@ from django.db import models
 
 
 class CustomUserManager(BaseUserManager):
+    """
+    A custom model manager that removes first name, last name, and email
+    """
+
     def create_user(self, username, password=None):
         if not username:
-            raise ValueError("Имя пользователя является обязательным")
+            raise ValueError("The username is mandatory")
 
         user = self.model(username=username)
         user.set_password(password)
@@ -33,8 +37,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     objects = CustomUserManager()
 
     class Meta:
-        verbose_name = "Пользователь"
-        verbose_name_plural = "Пользователи"
+        verbose_name = "User"
+        verbose_name_plural = "Users"
 
     def __str__(self):
         return self.username

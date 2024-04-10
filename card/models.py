@@ -3,12 +3,16 @@ from django.db import models
 
 
 class Photo(models.Model):
-    name = models.CharField(max_length=100, verbose_name="Название")
+    """
+    Model for photos
+    """
+
+    name = models.CharField(max_length=100, verbose_name="Name")
     slug = models.SlugField(verbose_name="URL")
-    image = models.ImageField(upload_to="images", verbose_name="Изображение")
+    image = models.ImageField(upload_to="images", verbose_name="Image")
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     category = models.ForeignKey(
-        "Category", on_delete=models.CASCADE, verbose_name="Категория"
+        "Category", on_delete=models.CASCADE, verbose_name="Category"
     )
 
     def __str__(self):
@@ -16,12 +20,16 @@ class Photo(models.Model):
 
     class Meta:
         ordering = ["name"]
-        verbose_name = "Фотографию"
-        verbose_name_plural = "Фотографии"
+        verbose_name = "Photo"
+        verbose_name_plural = "Photos"
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=100, verbose_name="Название")
+    """
+    Categories for photos
+    """
+
+    name = models.CharField(max_length=100, verbose_name="Name")
     slug = models.SlugField(verbose_name="URL")
 
     def __str__(self):
@@ -29,5 +37,5 @@ class Category(models.Model):
 
     class Meta:
         ordering = ["name"]
-        verbose_name = "Категория"
-        verbose_name_plural = "Категории"
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"

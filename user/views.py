@@ -9,6 +9,9 @@ from .forms import UserCreationForm
 
 
 def register(request):
+    """
+    Register a new user.
+    """
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -27,6 +30,9 @@ def register(request):
 
 
 def login_view(request):
+    """
+    Handle user login.
+    """
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
@@ -35,7 +41,7 @@ def login_view(request):
             login(request, user)
             return redirect("card:home")
         else:
-            error_message = "Неверный логин или пароль"
+            error_message = "Invalid login or password"
     else:
         error_message = None
 
@@ -50,12 +56,18 @@ def login_view(request):
 
 
 def logout_view(request):
+    """
+    Handle user logout.
+    """
     logout(request)
     return redirect("/")
 
 
 @login_required
 def profile(request):
+    """
+    Display user profile with their photos.
+    """
     user_photos = cache.get("user_photos_%s" % request.user.id)
     if user_photos is None:
         user_photos = Photo.objects.filter(user=request.user)

@@ -8,6 +8,9 @@ from .tasks import process_photo
 
 
 def cached_query(query, key, timeout=None):
+    """
+    Cache the results of a query to improve performance.
+    """
     cached_results = cache.get(key)
 
     if cached_results is not None:
@@ -20,6 +23,10 @@ def cached_query(query, key, timeout=None):
 
 
 def home(request, category_slug=None):
+    """
+    Display the home page with photos and categories.
+    """
+
     def get_photos():
         if category_slug:
             current_category = Category.objects.get(slug=category_slug)
@@ -52,6 +59,9 @@ def home(request, category_slug=None):
 
 @login_required
 def add_photo(request):
+    """
+    Add a new photo.
+    """
     if request.method == "POST":
         form = PhotoForm(request.POST, request.FILES)
         if form.is_valid():
@@ -68,6 +78,9 @@ def add_photo(request):
 
 @login_required
 def edit_photo(request, photo_id):
+    """
+    Edit an existing photo.
+    """
     photo = get_object_or_404(Photo, id=photo_id, user=request.user)
 
     if request.method == "POST":
@@ -83,6 +96,10 @@ def edit_photo(request, photo_id):
 
 @login_required
 def delete_photo(request, photo_id):
+    """
+    Delete a photo.
+    """
+
     def get_photo():
         photo = get_object_or_404(Photo, id=photo_id, user=request.user)
         return photo
